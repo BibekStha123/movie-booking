@@ -1,0 +1,15 @@
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\bin\Debug\net9.0\MovieBooking.Application.deps.json
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\bin\Debug\net9.0\MovieBooking.Application.dll
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\bin\Debug\net9.0\MovieBooking.Application.pdb
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\bin\Debug\net9.0\MovieBooking.Domain.dll
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\bin\Debug\net9.0\MovieBooking.Domain.pdb
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\obj\Debug\net9.0\MovieBooking.Application.csproj.AssemblyReference.cache
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\obj\Debug\net9.0\MovieBooking.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\obj\Debug\net9.0\MovieBooking.Application.AssemblyInfoInputs.cache
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\obj\Debug\net9.0\MovieBooking.Application.AssemblyInfo.cs
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\obj\Debug\net9.0\MovieBooking.Application.csproj.CoreCompileInputs.cache
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\obj\Debug\net9.0\MovieBoo.C397EB9B.Up2Date
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\obj\Debug\net9.0\MovieBooking.Application.dll
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\obj\Debug\net9.0\refint\MovieBooking.Application.dll
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\obj\Debug\net9.0\MovieBooking.Application.pdb
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\obj\Debug\net9.0\ref\MovieBooking.Application.dll
