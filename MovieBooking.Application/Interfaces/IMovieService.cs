@@ -9,5 +9,6 @@ namespace MovieBooking.Application.Interfaces
         Task<MovieResponse> GetByIdAsync(MovieId movieId);
         Task<MovieResponse> CreateAsync(MovieRequest movie);
         Task<bool> DeleteAsync(MovieId movieID);
+        Task<MovieResponse> UpdateAsync(MovieId movieId, MovieRequest movie);
     }
 }

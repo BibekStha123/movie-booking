@@ -1,0 +1,12 @@
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Domain\bin\Debug\net9.0\MovieBooking.Domain.deps.json
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Domain\bin\Debug\net9.0\MovieBooking.Domain.dll
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Domain\bin\Debug\net9.0\MovieBooking.Domain.pdb
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Domain\obj\Debug\net9.0\MovieBooking.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Domain\obj\Debug\net9.0\MovieBooking.Domain.AssemblyInfoInputs.cache
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Domain\obj\Debug\net9.0\MovieBooking.Domain.AssemblyInfo.cs
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Domain\obj\Debug\net9.0\MovieBooking.Domain.csproj.CoreCompileInputs.cache
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Domain\obj\Debug\net9.0\MovieBooking.Domain.dll
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Domain\obj\Debug\net9.0\refint\MovieBooking.Domain.dll
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Domain\obj\Debug\net9.0\MovieBooking.Domain.pdb
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Domain\obj\Debug\net9.0\ref\MovieBooking.Domain.dll
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Domain\obj\Debug\net9.0\MovieBooking.Domain.sourcelink.json

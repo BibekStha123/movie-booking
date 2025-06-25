@@ -23,7 +23,7 @@ namespace MovieBooking.Application.Services
                     movie.ReleaseDate, 
                     movie.RuntimeMinutes, 
                     movie.Status
-                );
+            );
 
             await _unitOfWork.Movie.CreateAsync(movieModel);
             await _unitOfWork.CompleteAsync();
@@ -49,6 +49,27 @@ namespace MovieBooking.Application.Services
         {
             var movie = await _unitOfWork.Movie.GetByIdAsync(movieId);
             return movie.ToMovieDTO();
+        }
+
+        public async Task<MovieResponse> UpdateAsync(MovieId movieId, MovieRequest request)
+        {
+            Movie existingMovie = await _unitOfWork.Movie.GetByIdAsync(movieId);
+
+            DirectorId directorId = new DirectorId(request.DirectorId);//need to convert guid to DirectorId record
+            existingMovie.Update(
+                request.Title,
+                request.Description,
+                request.ReleaseDate,
+                request.RuntimeMinutes,
+                request.Status
+            );
+
+            existingMovie.UpdateDirector(directorId);
+
+            await _unitOfWork.Movie.UpdateAsync(existingMovie);
+            await _unitOfWork.CompleteAsync();
+
+            return existingMovie.ToMovieDTO();
         }
     }
 }

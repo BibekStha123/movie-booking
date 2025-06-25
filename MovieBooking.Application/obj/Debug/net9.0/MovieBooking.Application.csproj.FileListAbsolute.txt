@@ -13,3 +13,4 @@ C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\obj\Debug\net9
 C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\obj\Debug\net9.0\refint\MovieBooking.Application.dll
 C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\obj\Debug\net9.0\MovieBooking.Application.pdb
 C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\obj\Debug\net9.0\ref\MovieBooking.Application.dll
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Application\obj\Debug\net9.0\MovieBooking.Application.sourcelink.json
