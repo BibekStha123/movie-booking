@@ -8,11 +8,13 @@ namespace MovieBooking.Infrastructure.Persistence
     {
         private readonly ApplicationDBContext _dbContext;
         public IMovieRepository Movie { get; }
+        public IDirectorRepository Director { get; }
 
         public UnitOfWork(ApplicationDBContext dBContext)
         {
             _dbContext = dBContext;
             Movie = new MovieRepository(_dbContext);
+            Director = new DirectorRepository(_dbContext);
         }
 
         public async Task<int> CompleteAsync()

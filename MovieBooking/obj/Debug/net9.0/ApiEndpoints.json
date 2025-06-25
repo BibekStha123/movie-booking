@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "MovieBooking.Controllers.DirectorController",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/directors",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MovieBooking.Controllers.MovieController",
     "Method": "CreateAsync",
     "RelativePath": "api/movies",

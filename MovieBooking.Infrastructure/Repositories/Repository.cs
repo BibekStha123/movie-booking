@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MovieBooking.Domain.Aggregates.Movies;
 using MovieBooking.Domain.Interfaces;
 using MovieBooking.Infrastructure.Persistence;
 
@@ -21,7 +20,6 @@ namespace MovieBooking.Infrastructure.Repositories
 
             return entity;
         }
-
         public async Task<TEntity> DeleteAsync(TID id)
         {
             var entity = await _dbSet.FindAsync(id)
@@ -32,17 +30,14 @@ namespace MovieBooking.Infrastructure.Repositories
 
             return entity;
         }
-
         public virtual async Task<List<TEntity>> GetAllAsync()
         {
             return await _dbSet.ToListAsync();
         }
-
         public virtual async Task<TEntity> GetByIdAsync(TID id)
         {
             return await _dbSet.FindAsync(id) ?? throw new Exception($"Data does not exist with id {id}");
         }
-
         public async Task<TEntity> UpdateAsync(TEntity entity)
         {
             _dbSet.Update(entity);

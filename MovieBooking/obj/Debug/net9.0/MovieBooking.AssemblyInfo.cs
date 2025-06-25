@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MovieBooking")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e79dc9f7022bc812ca880132a3d42f62193f34ca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ded3bd5b3aac1e82cbae063c62ef88ac2964959b")]
 [assembly: System.Reflection.AssemblyProductAttribute("MovieBooking")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MovieBooking")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
