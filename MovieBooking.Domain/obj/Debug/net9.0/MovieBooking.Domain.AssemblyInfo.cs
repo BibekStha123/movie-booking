@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MovieBooking.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e79dc9f7022bc812ca880132a3d42f62193f34ca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3b66e4dd0d6848172fcb06dbf0e5d0025c32236")]
 [assembly: System.Reflection.AssemblyProductAttribute("MovieBooking.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MovieBooking.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

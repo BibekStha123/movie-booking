@@ -8,7 +8,7 @@ namespace MovieBooking.Application.Interfaces
         Task<List<DirectorResponse>> GetAllAsyn();
         Task<DirectorResponse> GetByIdAsyn(DirectorId directorId);
         Task <DirectorResponse> CreateAsyn(DirectorRequest director);
-        Task<bool> DeleteAsyn();
+        Task<bool> DeleteAsyn(DirectorId directorId);
         Task<DirectorResponse> UpdateAsync(DirectorId directorId, DirectorRequest director);
     }
 }

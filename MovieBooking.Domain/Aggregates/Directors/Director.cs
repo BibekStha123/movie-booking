@@ -18,6 +18,11 @@ namespace MovieBooking.Domain.Aggregates.Directors
                 Name = name 
             };
         }
+        public void Update(string name)
+        {
+            Name = name;
+        }
+
         public void AddMovie(string title, string description, DateTime releaseDate, int runtimeMinutes, MovieStatus status)
         {
             var movie = Movie.Create(title, description, Id, releaseDate, runtimeMinutes, status);

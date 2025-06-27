@@ -12,30 +12,44 @@ namespace MovieBooking.Application.Services
         {
             _unitOfWork = unitOfWork;
         }
-        public Task<DirectorResponse> CreateAsyn(DirectorRequest director)
+        public async Task<DirectorResponse> CreateAsyn(DirectorRequest director)
         {
-            throw new NotImplementedException();
-        }
+            var directorModel = Director.Create(
+                    director.Name
+            );
 
-        public Task<bool> DeleteAsyn()
+            await _unitOfWork.Director.CreateAsync(directorModel);
+            await _unitOfWork.CompleteAsync();
+
+            return directorModel.ToDirectorDTO();
+        }
+        public async Task<bool> DeleteAsyn(DirectorId directorId)
         {
-            throw new NotImplementedException();
-        }
+            await _unitOfWork.Director.DeleteAsync(directorId);
+            await _unitOfWork.CompleteAsync();
 
+            return true;
+        }
         public async Task<List<DirectorResponse>> GetAllAsyn()
         {
             var directors = await _unitOfWork.Director.GetAllAsync();
             return directors.Select(d => d.ToDirectorDTO()).ToList();
         }
-
-        public Task<DirectorResponse> GetByIdAsyn(DirectorId directorId)
+        public async Task<DirectorResponse> GetByIdAsyn(DirectorId directorId)
         {
-            throw new NotImplementedException();
+            var director = await _unitOfWork.Director.GetByIdAsync(directorId);
+            return director.ToDirectorDTO();
         }
-
-        public Task<DirectorResponse> UpdateAsync(DirectorId directorId, DirectorRequest director)
+        public async Task<DirectorResponse> UpdateAsync(DirectorId directorId, DirectorRequest director)
         {
-            throw new NotImplementedException();
+            var existingDirector = await _unitOfWork.Director.GetByIdAsync(directorId);
+
+            existingDirector.Update(director.Name);
+
+            await _unitOfWork.Director.UpdateAsync(existingDirector);
+            await _unitOfWork.CompleteAsync();
+
+            return existingDirector.ToDirectorDTO();
         }
     }
 }
