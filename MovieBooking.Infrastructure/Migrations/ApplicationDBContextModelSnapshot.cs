@@ -35,6 +35,73 @@ namespace MovieBooking.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Casts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
+                            Name = "Chris Hemsworth"
+                        },
+                        new
+                        {
+                            Id = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Name = "Tom Hiddleston"
+                        },
+                        new
+                        {
+                            Id = new Guid("cccccccc-cccc-cccc-cccc-cccccccccccc"),
+                            Name = "Natalie Portman"
+                        },
+                        new
+                        {
+                            Id = new Guid("dddddddd-dddd-dddd-dddd-dddddddddddd"),
+                            Name = "Robert Downey Jr."
+                        },
+                        new
+                        {
+                            Id = new Guid("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee"),
+                            Name = "Scarlett Johansson"
+                        });
+                });
+
+            modelBuilder.Entity("MovieBooking.Domain.Aggregates.Cinemas.Cinema", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<Guid>("StateId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StateId");
+
+                    b.ToTable("Cinema");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("aaaaaaaa-1111-1111-1111-111111111111"),
+                            Name = "Event Cinema Adelaide SA",
+                            StateId = new Guid("11111111-aaaa-aaaa-aaaa-aaaaaaaaaaaa")
+                        },
+                        new
+                        {
+                            Id = new Guid("aaaaaaaa-2222-2222-2222-222222222222"),
+                            Name = "Hoyts Melbourne Central VIC",
+                            StateId = new Guid("22222222-bbbb-bbbb-bbbb-bbbbbbbbbbbb")
+                        },
+                        new
+                        {
+                            Id = new Guid("aaaaaaaa-3333-3333-3333-333333333333"),
+                            Name = "Luna Cinemas Perth WA",
+                            StateId = new Guid("44444444-dddd-dddd-dddd-dddddddddddd")
+                        });
                 });
 
             modelBuilder.Entity("MovieBooking.Domain.Aggregates.Directors.Director", b =>
@@ -199,6 +266,163 @@ namespace MovieBooking.Infrastructure.Migrations
                         });
                 });
 
+            modelBuilder.Entity("MovieBooking.Domain.Aggregates.Seats.Seat", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("SeatNo")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<Guid>("TheatreId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TheatreId");
+
+                    b.ToTable("Seat");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("cccccccc-1111-aaaa-aaaa-aaaaaaaaaaaa"),
+                            SeatNo = "A1a",
+                            TheatreId = new Guid("bbbbbbbb-1111-1111-1111-111111111111")
+                        },
+                        new
+                        {
+                            Id = new Guid("cccccccc-1111-bbbb-bbbb-bbbbbbbbbbbb"),
+                            SeatNo = "A2a",
+                            TheatreId = new Guid("bbbbbbbb-1111-1111-1111-111111111111")
+                        },
+                        new
+                        {
+                            Id = new Guid("cccccccc-2222-aaaa-aaaa-aaaaaaaaaaaa"),
+                            SeatNo = "B1b",
+                            TheatreId = new Guid("bbbbbbbb-2222-2222-2222-222222222222")
+                        },
+                        new
+                        {
+                            Id = new Guid("cccccccc-2222-bbbb-bbbb-bbbbbbbbbbbb"),
+                            SeatNo = "B2b",
+                            TheatreId = new Guid("bbbbbbbb-2222-2222-2222-222222222222")
+                        },
+                        new
+                        {
+                            Id = new Guid("cccccccc-3333-aaaa-aaaa-aaaaaaaaaaaa"),
+                            SeatNo = "C1c",
+                            TheatreId = new Guid("bbbbbbbb-3333-3333-3333-333333333333")
+                        },
+                        new
+                        {
+                            Id = new Guid("cccccccc-3333-bbbb-bbbb-bbbbbbbbbbbb"),
+                            SeatNo = "C2c",
+                            TheatreId = new Guid("bbbbbbbb-3333-3333-3333-333333333333")
+                        });
+                });
+
+            modelBuilder.Entity("MovieBooking.Domain.Aggregates.States.State", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("State");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("33333333-cccc-cccc-cccc-cccccccccccc"),
+                            Name = "NSW"
+                        },
+                        new
+                        {
+                            Id = new Guid("55555555-eeee-eeee-eeee-eeeeeeeeeeee"),
+                            Name = "QLD"
+                        },
+                        new
+                        {
+                            Id = new Guid("44444444-dddd-dddd-dddd-dddddddddddd"),
+                            Name = "WA"
+                        },
+                        new
+                        {
+                            Id = new Guid("22222222-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Name = "VIC"
+                        },
+                        new
+                        {
+                            Id = new Guid("11111111-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
+                            Name = "SA"
+                        });
+                });
+
+            modelBuilder.Entity("MovieBooking.Domain.Aggregates.Theatres.Theatre", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CinemaId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("SeatCapacity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CinemaId");
+
+                    b.ToTable("Theatre");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("bbbbbbbb-1111-1111-1111-111111111111"),
+                            CinemaId = new Guid("aaaaaaaa-1111-1111-1111-111111111111"),
+                            Name = "Event Theatre 1a",
+                            SeatCapacity = 100
+                        },
+                        new
+                        {
+                            Id = new Guid("bbbbbbbb-2222-2222-2222-222222222222"),
+                            CinemaId = new Guid("aaaaaaaa-2222-2222-2222-222222222222"),
+                            Name = "Hoyts Theatre 1a",
+                            SeatCapacity = 120
+                        },
+                        new
+                        {
+                            Id = new Guid("bbbbbbbb-3333-3333-3333-333333333333"),
+                            CinemaId = new Guid("aaaaaaaa-3333-3333-3333-333333333333"),
+                            Name = "Luna Theatre 1a",
+                            SeatCapacity = 80
+                        });
+                });
+
+            modelBuilder.Entity("MovieBooking.Domain.Aggregates.Cinemas.Cinema", b =>
+                {
+                    b.HasOne("MovieBooking.Domain.Aggregates.States.State", "State")
+                        .WithMany("Cinemas")
+                        .HasForeignKey("StateId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("State");
+                });
+
             modelBuilder.Entity("MovieBooking.Domain.Aggregates.Movies.Movie", b =>
                 {
                     b.HasOne("MovieBooking.Domain.Aggregates.Directors.Director", "Director")
@@ -210,9 +434,46 @@ namespace MovieBooking.Infrastructure.Migrations
                     b.Navigation("Director");
                 });
 
+            modelBuilder.Entity("MovieBooking.Domain.Aggregates.Seats.Seat", b =>
+                {
+                    b.HasOne("MovieBooking.Domain.Aggregates.Theatres.Theatre", "Theatre")
+                        .WithMany("Seats")
+                        .HasForeignKey("TheatreId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Theatre");
+                });
+
+            modelBuilder.Entity("MovieBooking.Domain.Aggregates.Theatres.Theatre", b =>
+                {
+                    b.HasOne("MovieBooking.Domain.Aggregates.Cinemas.Cinema", "Cinema")
+                        .WithMany("Theatres")
+                        .HasForeignKey("CinemaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Cinema");
+                });
+
+            modelBuilder.Entity("MovieBooking.Domain.Aggregates.Cinemas.Cinema", b =>
+                {
+                    b.Navigation("Theatres");
+                });
+
             modelBuilder.Entity("MovieBooking.Domain.Aggregates.Directors.Director", b =>
                 {
                     b.Navigation("Movies");
+                });
+
+            modelBuilder.Entity("MovieBooking.Domain.Aggregates.States.State", b =>
+                {
+                    b.Navigation("Cinemas");
+                });
+
+            modelBuilder.Entity("MovieBooking.Domain.Aggregates.Theatres.Theatre", b =>
+                {
+                    b.Navigation("Seats");
                 });
 #pragma warning restore 612, 618
         }

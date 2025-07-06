@@ -2,6 +2,7 @@
 using MovieBooking.Application.DTO.Movie;
 using MovieBooking.Application.Interfaces;
 using MovieBooking.Domain.Aggregates.Movies;
+using System.Net.Http;
 
 namespace MovieBooking.Controllers
 {
@@ -35,7 +36,7 @@ namespace MovieBooking.Controllers
         {
             MovieId movieId = new MovieId(id);
             var movie = await _movieService.GetByIdAsync(movieId);
-            if(movie == null)
+            if (movie == null)
             {
                 return NotFound();
             }
