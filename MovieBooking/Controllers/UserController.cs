@@ -18,13 +18,7 @@ namespace MovieBooking.Controllers
         [HttpPost("register")]
         public async Task<ActionResult> Register([FromBody] UserRequest request)
         {
-            var existingUser = await _userService.GetByEmailAsync(request.Email);
-            if (existingUser != null)
-            {
-                throw new Exception($"User already exist for email {request.Email}");
-            }
-
-            var user = await _userService.CreateUserAsync(request.Email, request.Password);
+            var user = await _userService.CreateUserAsync(request.Email, request.Password, request.Role);
             return Ok( new
             {
                 message = "User Created Successfully.",

@@ -26,10 +26,12 @@ namespace MovieBooking.Infrastructure
             services.AddScoped<IMovieRepository, MovieRepository>();
             services.AddScoped<IDirectorRepository, DirectorRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IRoleRepository, RoleRepository>();
             //services
             services.AddScoped<IMovieService, MovieService>();
             services.AddScoped<IDirectorService, DirectorService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IRoleService, RoleService>();
             //unit of work
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             //jwt

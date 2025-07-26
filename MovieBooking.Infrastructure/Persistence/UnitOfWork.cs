@@ -10,6 +10,7 @@ namespace MovieBooking.Infrastructure.Persistence
         public IMovieRepository Movie { get; }
         public IDirectorRepository Director { get; }
         public IUserRepository User { get; }
+        public IRoleRepository Role { get; }
 
         public UnitOfWork(ApplicationDBContext dBContext)
         {
@@ -17,6 +18,7 @@ namespace MovieBooking.Infrastructure.Persistence
             Movie = new MovieRepository(_dbContext);
             Director = new DirectorRepository(_dbContext);
             User = new UserRepository(_dbContext);
+            Role = new RoleRepository(_dbContext);
         }
 
         public async Task<int> CompleteAsync()

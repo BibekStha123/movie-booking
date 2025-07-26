@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using MovieBooking.Domain.Aggregates.UserRoles;
 using MovieBooking.Domain.Aggregates.Users;
 
 namespace MovieBooking.Infrastructure.Persistence.Configurations
@@ -21,6 +22,11 @@ namespace MovieBooking.Infrastructure.Persistence.Configurations
             builder.Property(x => x.Password)
                 .IsRequired()
                 .HasMaxLength(100);
+
+            builder.HasMany<UserRole>()
+                .WithOne(ur => ur.User)
+                .HasForeignKey(ur => ur.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

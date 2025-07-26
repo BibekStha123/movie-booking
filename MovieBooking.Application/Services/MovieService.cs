@@ -48,6 +48,8 @@ namespace MovieBooking.Application.Services
         public async Task<MovieResponse> GetByIdAsync(MovieId movieId)
         {
             var movie = await _unitOfWork.Movie.GetByIdAsync(movieId);
+            if (movie == null)
+                throw new Exception($"Movie does not exist with id {movieId}"); ;
             return movie.ToMovieDTO();
         }
 

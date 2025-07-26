@@ -38,6 +38,8 @@ namespace MovieBooking.Application.Services
         public async Task<DirectorResponse> GetByIdAsyn(DirectorId directorId)
         {
             var director = await _unitOfWork.Director.GetByIdAsync(directorId);
+            if (director == null)
+                throw new Exception($"Director does not exist with id {directorId}");
             return director.ToDirectorDTO();
         }
         public async Task<DirectorResponse> UpdateAsync(DirectorId directorId, DirectorRequest director)

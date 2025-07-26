@@ -1,5 +1,4 @@
-﻿using MovieBooking.Application.DTO;
-using MovieBooking.Application.DTO.Director;
+﻿using MovieBooking.Application.DTO.Director;
 using MovieBooking.Application.DTO.Movie;
 using MovieBooking.Domain.Aggregates.Movies;
 
@@ -11,7 +10,7 @@ namespace MovieBooking.Application.Mapper
         {
             var director = movie.Director == null
                 ? null
-                : new DirectorResponse
+                : new BasicDirectorResponse
                 {
                     Id = movie.DirectorId,
                     Name = movie.Director.Name

@@ -6,7 +6,7 @@ using MovieBooking.Domain.Aggregates.Movies;
 
 namespace MovieBooking.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [ApiController]
     [Route("api/movies")]
     public class MovieController : ControllerBase

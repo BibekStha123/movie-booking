@@ -4,6 +4,7 @@ using MovieBooking.Domain.Aggregates.Cinemas;
 using MovieBooking.Domain.Aggregates.Directors;
 using MovieBooking.Domain.Aggregates.Genres;
 using MovieBooking.Domain.Aggregates.Movies;
+using MovieBooking.Domain.Aggregates.Roles;
 using MovieBooking.Domain.Aggregates.Seats;
 using MovieBooking.Domain.Aggregates.States;
 using MovieBooking.Domain.Aggregates.Theatres;
@@ -113,6 +114,14 @@ namespace MovieBooking.Infrastructure.Persistence.Seeders
 
                 new { Id = new SeatId(SeedIds.Seat_Luna_Theatre1_SeatA1),  SeatNo = "C1c", TheatreId = new TheatreId(SeedIds.Theatre_LunaTheatre1) },
                 new { Id = new SeatId(SeedIds.Seat_Luna_Theatre1_SeatA2),  SeatNo = "C2c", TheatreId = new TheatreId(SeedIds.Theatre_LunaTheatre1) }
+            );
+        }
+
+        public static void RoleSeed(EntityTypeBuilder<Role> builder)
+        {
+            builder.HasData(
+                new { Id = new RoleId(SeedIds.Role1), Name = "User" },
+                new { Id = new RoleId(SeedIds.Role2), Name = "Admin" }
             );
         }
     }

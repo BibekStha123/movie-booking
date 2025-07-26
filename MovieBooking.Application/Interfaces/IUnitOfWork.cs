@@ -7,6 +7,7 @@ namespace MovieBooking.Application.Interfaces
         public IMovieRepository Movie {  get; }
         public IDirectorRepository Director { get; }
         public IUserRepository User { get; }
+        public IRoleRepository Role { get; }
         Task<int> CompleteAsync();
     }
 }

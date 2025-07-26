@@ -35,33 +35,6 @@ namespace MovieBooking.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Casts");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
-                            Name = "Chris Hemsworth"
-                        },
-                        new
-                        {
-                            Id = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
-                            Name = "Tom Hiddleston"
-                        },
-                        new
-                        {
-                            Id = new Guid("cccccccc-cccc-cccc-cccc-cccccccccccc"),
-                            Name = "Natalie Portman"
-                        },
-                        new
-                        {
-                            Id = new Guid("dddddddd-dddd-dddd-dddd-dddddddddddd"),
-                            Name = "Robert Downey Jr."
-                        },
-                        new
-                        {
-                            Id = new Guid("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee"),
-                            Name = "Scarlett Johansson"
-                        });
                 });
 
             modelBuilder.Entity("MovieBooking.Domain.Aggregates.Cinemas.Cinema", b =>
@@ -82,26 +55,6 @@ namespace MovieBooking.Infrastructure.Migrations
                     b.HasIndex("StateId");
 
                     b.ToTable("Cinema");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("aaaaaaaa-1111-1111-1111-111111111111"),
-                            Name = "Event Cinema Adelaide SA",
-                            StateId = new Guid("11111111-aaaa-aaaa-aaaa-aaaaaaaaaaaa")
-                        },
-                        new
-                        {
-                            Id = new Guid("aaaaaaaa-2222-2222-2222-222222222222"),
-                            Name = "Hoyts Melbourne Central VIC",
-                            StateId = new Guid("22222222-bbbb-bbbb-bbbb-bbbbbbbbbbbb")
-                        },
-                        new
-                        {
-                            Id = new Guid("aaaaaaaa-3333-3333-3333-333333333333"),
-                            Name = "Luna Cinemas Perth WA",
-                            StateId = new Guid("44444444-dddd-dddd-dddd-dddddddddddd")
-                        });
                 });
 
             modelBuilder.Entity("MovieBooking.Domain.Aggregates.Directors.Director", b =>
@@ -117,18 +70,6 @@ namespace MovieBooking.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Directors");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("11111111-1111-1111-1111-111111111111"),
-                            Name = "Christopher Nolan"
-                        },
-                        new
-                        {
-                            Id = new Guid("22222222-2222-2222-2222-222222222222"),
-                            Name = "Steven Spielberg"
-                        });
                 });
 
             modelBuilder.Entity("MovieBooking.Domain.Aggregates.Genres.Genre", b =>
@@ -144,38 +85,6 @@ namespace MovieBooking.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Genres");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("11111111-1111-1111-1111-111111111111"),
-                            Name = "Drama"
-                        },
-                        new
-                        {
-                            Id = new Guid("22222222-2222-2222-2222-222222222222"),
-                            Name = "Action"
-                        },
-                        new
-                        {
-                            Id = new Guid("33333333-3333-3333-3333-333333333333"),
-                            Name = "Horror"
-                        },
-                        new
-                        {
-                            Id = new Guid("44444444-4444-4444-4444-444444444444"),
-                            Name = "Love Story"
-                        },
-                        new
-                        {
-                            Id = new Guid("55555555-5555-5555-5555-555555555555"),
-                            Name = "Sci-Fi"
-                        },
-                        new
-                        {
-                            Id = new Guid("66666666-6666-6666-6666-666666666666"),
-                            Name = "Thriller"
-                        });
                 });
 
             modelBuilder.Entity("MovieBooking.Domain.Aggregates.MovieCasts.MovieCast", b =>
@@ -242,27 +151,32 @@ namespace MovieBooking.Infrastructure.Migrations
                     b.HasIndex("DirectorId");
 
                     b.ToTable("Movies");
+                });
+
+            modelBuilder.Entity("MovieBooking.Domain.Aggregates.Roles.Role", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Role");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("33333333-3333-3333-3333-333333333333"),
-                            Description = "Mind-bending sci-fi thriller",
-                            DirectorId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            ReleaseDate = new DateTime(2010, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            RuntimeMinutes = 148,
-                            Status = 20,
-                            Title = "Inception"
+                            Id = new Guid("cccccccc-3333-aaaa-aaaa-aaaaaaaaaaaa"),
+                            Name = "User"
                         },
                         new
                         {
-                            Id = new Guid("44444444-4444-4444-4444-444444444444"),
-                            Description = "Shark attack thriller",
-                            DirectorId = new Guid("22222222-2222-2222-2222-222222222222"),
-                            ReleaseDate = new DateTime(1975, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            RuntimeMinutes = 124,
-                            Status = 20,
-                            Title = "Jaws"
+                            Id = new Guid("cccccccc-3333-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Name = "Admin"
                         });
                 });
 
@@ -284,44 +198,6 @@ namespace MovieBooking.Infrastructure.Migrations
                     b.HasIndex("TheatreId");
 
                     b.ToTable("Seat");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("cccccccc-1111-aaaa-aaaa-aaaaaaaaaaaa"),
-                            SeatNo = "A1a",
-                            TheatreId = new Guid("bbbbbbbb-1111-1111-1111-111111111111")
-                        },
-                        new
-                        {
-                            Id = new Guid("cccccccc-1111-bbbb-bbbb-bbbbbbbbbbbb"),
-                            SeatNo = "A2a",
-                            TheatreId = new Guid("bbbbbbbb-1111-1111-1111-111111111111")
-                        },
-                        new
-                        {
-                            Id = new Guid("cccccccc-2222-aaaa-aaaa-aaaaaaaaaaaa"),
-                            SeatNo = "B1b",
-                            TheatreId = new Guid("bbbbbbbb-2222-2222-2222-222222222222")
-                        },
-                        new
-                        {
-                            Id = new Guid("cccccccc-2222-bbbb-bbbb-bbbbbbbbbbbb"),
-                            SeatNo = "B2b",
-                            TheatreId = new Guid("bbbbbbbb-2222-2222-2222-222222222222")
-                        },
-                        new
-                        {
-                            Id = new Guid("cccccccc-3333-aaaa-aaaa-aaaaaaaaaaaa"),
-                            SeatNo = "C1c",
-                            TheatreId = new Guid("bbbbbbbb-3333-3333-3333-333333333333")
-                        },
-                        new
-                        {
-                            Id = new Guid("cccccccc-3333-bbbb-bbbb-bbbbbbbbbbbb"),
-                            SeatNo = "C2c",
-                            TheatreId = new Guid("bbbbbbbb-3333-3333-3333-333333333333")
-                        });
                 });
 
             modelBuilder.Entity("MovieBooking.Domain.Aggregates.States.State", b =>
@@ -337,33 +213,6 @@ namespace MovieBooking.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("State");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("33333333-cccc-cccc-cccc-cccccccccccc"),
-                            Name = "NSW"
-                        },
-                        new
-                        {
-                            Id = new Guid("55555555-eeee-eeee-eeee-eeeeeeeeeeee"),
-                            Name = "QLD"
-                        },
-                        new
-                        {
-                            Id = new Guid("44444444-dddd-dddd-dddd-dddddddddddd"),
-                            Name = "WA"
-                        },
-                        new
-                        {
-                            Id = new Guid("22222222-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
-                            Name = "VIC"
-                        },
-                        new
-                        {
-                            Id = new Guid("11111111-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
-                            Name = "SA"
-                        });
                 });
 
             modelBuilder.Entity("MovieBooking.Domain.Aggregates.Theatres.Theatre", b =>
@@ -387,29 +236,36 @@ namespace MovieBooking.Infrastructure.Migrations
                     b.HasIndex("CinemaId");
 
                     b.ToTable("Theatre");
+                });
 
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("bbbbbbbb-1111-1111-1111-111111111111"),
-                            CinemaId = new Guid("aaaaaaaa-1111-1111-1111-111111111111"),
-                            Name = "Event Theatre 1a",
-                            SeatCapacity = 100
-                        },
-                        new
-                        {
-                            Id = new Guid("bbbbbbbb-2222-2222-2222-222222222222"),
-                            CinemaId = new Guid("aaaaaaaa-2222-2222-2222-222222222222"),
-                            Name = "Hoyts Theatre 1a",
-                            SeatCapacity = 120
-                        },
-                        new
-                        {
-                            Id = new Guid("bbbbbbbb-3333-3333-3333-333333333333"),
-                            CinemaId = new Guid("aaaaaaaa-3333-3333-3333-333333333333"),
-                            Name = "Luna Theatre 1a",
-                            SeatCapacity = 80
-                        });
+            modelBuilder.Entity("MovieBooking.Domain.Aggregates.UserRoles.UserRole", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("RoleId1")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("UserId1")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.HasIndex("RoleId1");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("UserId1");
+
+                    b.ToTable("UserRole");
                 });
 
             modelBuilder.Entity("MovieBooking.Domain.Aggregates.Users.User", b =>
@@ -430,6 +286,21 @@ namespace MovieBooking.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User");
+                });
+
+            modelBuilder.Entity("RoleUser", b =>
+                {
+                    b.Property<Guid>("RolesId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UsersId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("RolesId", "UsersId");
+
+                    b.HasIndex("UsersId");
+
+                    b.ToTable("RoleUser");
                 });
 
             modelBuilder.Entity("MovieBooking.Domain.Aggregates.Cinemas.Cinema", b =>
@@ -476,6 +347,48 @@ namespace MovieBooking.Infrastructure.Migrations
                     b.Navigation("Cinema");
                 });
 
+            modelBuilder.Entity("MovieBooking.Domain.Aggregates.UserRoles.UserRole", b =>
+                {
+                    b.HasOne("MovieBooking.Domain.Aggregates.Roles.Role", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MovieBooking.Domain.Aggregates.Roles.Role", null)
+                        .WithMany("UserRoles")
+                        .HasForeignKey("RoleId1");
+
+                    b.HasOne("MovieBooking.Domain.Aggregates.Users.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MovieBooking.Domain.Aggregates.Users.User", null)
+                        .WithMany("UserRoles")
+                        .HasForeignKey("UserId1");
+
+                    b.Navigation("Role");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("RoleUser", b =>
+                {
+                    b.HasOne("MovieBooking.Domain.Aggregates.Roles.Role", null)
+                        .WithMany()
+                        .HasForeignKey("RolesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MovieBooking.Domain.Aggregates.Users.User", null)
+                        .WithMany()
+                        .HasForeignKey("UsersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("MovieBooking.Domain.Aggregates.Cinemas.Cinema", b =>
                 {
                     b.Navigation("Theatres");
@@ -486,6 +399,11 @@ namespace MovieBooking.Infrastructure.Migrations
                     b.Navigation("Movies");
                 });
 
+            modelBuilder.Entity("MovieBooking.Domain.Aggregates.Roles.Role", b =>
+                {
+                    b.Navigation("UserRoles");
+                });
+
             modelBuilder.Entity("MovieBooking.Domain.Aggregates.States.State", b =>
                 {
                     b.Navigation("Cinemas");
@@ -494,6 +412,11 @@ namespace MovieBooking.Infrastructure.Migrations
             modelBuilder.Entity("MovieBooking.Domain.Aggregates.Theatres.Theatre", b =>
                 {
                     b.Navigation("Seats");
+                });
+
+            modelBuilder.Entity("MovieBooking.Domain.Aggregates.Users.User", b =>
+                {
+                    b.Navigation("UserRoles");
                 });
 #pragma warning restore 612, 618
         }

@@ -8,14 +8,22 @@ namespace MovieBooking.Application.Services
     public class UserService : IUserService
     {
         private readonly IUnitOfWork _unitOfWork;
-        public UserService(IUnitOfWork unitOfWork)
+        private readonly IRoleService _roleService;
+        public UserService(IUnitOfWork unitOfWork, IRoleService roleService)
         {
             _unitOfWork = unitOfWork;
+            _roleService = roleService;
         }
-        public async Task<User> CreateUserAsync(string email, string password)
+        public async Task<User> CreateUserAsync(string email, string password, string roleName)
         {
+            User? existingUser = await GetByEmailAsync(email);
+            if (existingUser != null) throw new Exception($"User already exist for email {email}");
+
             var hash = HashPassword(password);
             User user = new User(email, hash);
+
+            var role = await _roleService.GetByNameAsync(roleName);
+            user.AddRole(role);
 
             return await _unitOfWork.User.CreateUserAsync(user);
         }

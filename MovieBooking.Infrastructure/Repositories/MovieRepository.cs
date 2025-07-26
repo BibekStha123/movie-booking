@@ -19,8 +19,7 @@ namespace MovieBooking.Infrastructure.Repositories
 
         public async override Task<Movie> GetByIdAsync(MovieId movieId)
         {
-            return await _dbContext.Movies.Include(m => m.Director).FirstOrDefaultAsync(m => m.Id == movieId) ?? 
-                throw new Exception($"Movie does not exist with id {movieId}");
+            return await _dbContext.Movies.Include(m => m.Director).FirstOrDefaultAsync(m => m.Id == movieId) ?? new Movie();
         }
     }
 }

@@ -1,10 +1,6 @@
 ﻿using MovieBooking.Application.DTO.Director;
+using MovieBooking.Application.DTO.Movie;
 using MovieBooking.Domain.Aggregates.Directors;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MovieBooking.Application.Mapper
 {
@@ -16,6 +12,15 @@ namespace MovieBooking.Application.Mapper
             {
                 Id = model.Id,
                 Name = model.Name,
+                Movies = model.Movies.Select( m => new BasicMovieResponse
+                {
+                    Id = m.Id,
+                    Title = m.Title,
+                    Description = m.Description,
+                    ReleaseDate = m.ReleaseDate,
+                    RuntimeMinutes = m.RuntimeMinutes,
+                    Status = m.Status.ToString()
+                }).ToList()
             };
         }
     }

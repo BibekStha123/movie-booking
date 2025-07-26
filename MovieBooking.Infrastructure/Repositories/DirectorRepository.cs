@@ -19,8 +19,7 @@ namespace MovieBooking.Infrastructure.Repositories
         }
         public async override Task<Director> GetByIdAsync(DirectorId directorId)
         {
-            return await _dbContext.Directors.Include(d => d.Movies).FirstOrDefaultAsync(d => d.Id == directorId) ??
-                throw new Exception($"Director does not exist with id {directorId}");
+            return await _dbContext.Directors.Include(d => d.Movies).FirstOrDefaultAsync(d => d.Id == directorId) ?? new Director();
         }
     }
 }

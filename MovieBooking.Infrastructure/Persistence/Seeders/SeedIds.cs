@@ -44,12 +44,13 @@ namespace MovieBooking.Infrastructure.Persistence.Seeders
         //seat ids
         public static readonly Guid Seat_Event_Theatre1_SeatA1 = Guid.Parse("cccccccc-1111-aaaa-aaaa-aaaaaaaaaaaa");
         public static readonly Guid Seat_Event_Theatre1_SeatA2 = Guid.Parse("cccccccc-1111-bbbb-bbbb-bbbbbbbbbbbb");
-
         public static readonly Guid Seat_Hoyts_Theatre1_SeatA1 = Guid.Parse("cccccccc-2222-aaaa-aaaa-aaaaaaaaaaaa");
         public static readonly Guid Seat_Hoyts_Theatre1_SeatA2 = Guid.Parse("cccccccc-2222-bbbb-bbbb-bbbbbbbbbbbb");
-
         public static readonly Guid Seat_Luna_Theatre1_SeatA1 = Guid.Parse("cccccccc-3333-aaaa-aaaa-aaaaaaaaaaaa");
         public static readonly Guid Seat_Luna_Theatre1_SeatA2 = Guid.Parse("cccccccc-3333-bbbb-bbbb-bbbbbbbbbbbb");
+        //role ids
+        public static readonly Guid Role1 = Guid.Parse("cccccccc-3333-aaaa-aaaa-aaaaaaaaaaaa");
+        public static readonly Guid Role2 = Guid.Parse("cccccccc-3333-bbbb-bbbb-bbbbbbbbbbbb");
 
     }
 }

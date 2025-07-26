@@ -6,9 +6,11 @@ using MovieBooking.Domain.Aggregates.Genres;
 using MovieBooking.Domain.Aggregates.MovieCasts;
 using MovieBooking.Domain.Aggregates.MovieGenres;
 using MovieBooking.Domain.Aggregates.Movies;
+using MovieBooking.Domain.Aggregates.Roles;
 using MovieBooking.Domain.Aggregates.Seats;
 using MovieBooking.Domain.Aggregates.States;
 using MovieBooking.Domain.Aggregates.Theatres;
+using MovieBooking.Domain.Aggregates.UserRoles;
 using MovieBooking.Domain.Aggregates.Users;
 using MovieBooking.Infrastructure.Persistence.Seeders;
 
@@ -29,20 +31,23 @@ namespace MovieBooking.Infrastructure.Persistence
         public DbSet<Theatre> Theatre { get; set; }
         public DbSet<Seat> Seat { get; set; }
         public DbSet<User> User { get; set; }
+        public DbSet<Role> Role { get; set; }
+        public DbSet<UserRole> UserRole { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDBContext).Assembly);
             base.OnModelCreating(modelBuilder);
 
             //seeder
-            Seeder.DirectorSeed(modelBuilder.Entity<Director>());
-            Seeder.MovieSeed(modelBuilder.Entity<Movie>());
-            Seeder.GenreSeed(modelBuilder.Entity<Genre>());
-            Seeder.CastSeed(modelBuilder.Entity<Cast>());
-            Seeder.StateSeed(modelBuilder.Entity<State>());
-            Seeder.CinemaSeed(modelBuilder.Entity<Cinema>());
-            Seeder.TheatreSeed(modelBuilder.Entity<Theatre>());
-            Seeder.SeatSeed(modelBuilder.Entity<Seat>());
+            //Seeder.DirectorSeed(modelBuilder.Entity<Director>());
+            //Seeder.MovieSeed(modelBuilder.Entity<Movie>());
+            //Seeder.GenreSeed(modelBuilder.Entity<Genre>());
+            //Seeder.CastSeed(modelBuilder.Entity<Cast>());
+            //Seeder.StateSeed(modelBuilder.Entity<State>());
+            //Seeder.CinemaSeed(modelBuilder.Entity<Cinema>());
+            //Seeder.TheatreSeed(modelBuilder.Entity<Theatre>());
+            //Seeder.SeatSeed(modelBuilder.Entity<Seat>());
+            Seeder.RoleSeed(modelBuilder.Entity<Role>());
         }
 
     }
