@@ -10,3 +10,4 @@ C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Domain\obj\Debug\net9.0\re
 C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Domain\obj\Debug\net9.0\MovieBooking.Domain.pdb
 C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Domain\obj\Debug\net9.0\ref\MovieBooking.Domain.dll
 C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Domain\obj\Debug\net9.0\MovieBooking.Domain.sourcelink.json
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking.Domain\obj\Debug\net9.0\MovieBooking.Domain.csproj.AssemblyReference.cache

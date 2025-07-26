@@ -412,6 +412,26 @@ namespace MovieBooking.Infrastructure.Migrations
                         });
                 });
 
+            modelBuilder.Entity("MovieBooking.Domain.Aggregates.Users.User", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User");
+                });
+
             modelBuilder.Entity("MovieBooking.Domain.Aggregates.Cinemas.Cinema", b =>
                 {
                     b.HasOne("MovieBooking.Domain.Aggregates.States.State", "State")

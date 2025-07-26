@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using MovieBooking.Application.Interfaces;
 using MovieBooking.Application.Services;
 using MovieBooking.Domain.Interfaces;
+using MovieBooking.Infrastructure.Auth;
 using MovieBooking.Infrastructure.Persistence;
 using MovieBooking.Infrastructure.Repositories;
 
@@ -24,11 +25,15 @@ namespace MovieBooking.Infrastructure
             //repositories
             services.AddScoped<IMovieRepository, MovieRepository>();
             services.AddScoped<IDirectorRepository, DirectorRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             //services
             services.AddScoped<IMovieService, MovieService>();
             services.AddScoped<IDirectorService, DirectorService>();
+            services.AddScoped<IUserService, UserService>();
             //unit of work
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            //jwt
+            services.AddSingleton<IJwtTokenGenerator, JwtTokenGenerator>();
 
             return services;
         }

@@ -168,3 +168,4 @@ C:\Users\bibek\source\repos\MovieBooking\MovieBooking\obj\Debug\net9.0\MovieBook
 C:\Users\bibek\source\repos\MovieBooking\MovieBooking\obj\Debug\net9.0\MovieBooking.genruntimeconfig.cache
 C:\Users\bibek\source\repos\MovieBooking\MovieBooking\obj\Debug\net9.0\ref\MovieBooking.dll
 C:\Users\bibek\source\repos\MovieBooking\MovieBooking\obj\Debug\net9.0\MovieBooking.sourcelink.json
+C:\Users\bibek\source\repos\MovieBooking\MovieBooking\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

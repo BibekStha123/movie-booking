@@ -9,12 +9,14 @@ namespace MovieBooking.Infrastructure.Persistence
         private readonly ApplicationDBContext _dbContext;
         public IMovieRepository Movie { get; }
         public IDirectorRepository Director { get; }
+        public IUserRepository User { get; }
 
         public UnitOfWork(ApplicationDBContext dBContext)
         {
             _dbContext = dBContext;
             Movie = new MovieRepository(_dbContext);
             Director = new DirectorRepository(_dbContext);
+            User = new UserRepository(_dbContext);
         }
 
         public async Task<int> CompleteAsync()

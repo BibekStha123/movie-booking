@@ -9,6 +9,7 @@ using MovieBooking.Domain.Aggregates.Movies;
 using MovieBooking.Domain.Aggregates.Seats;
 using MovieBooking.Domain.Aggregates.States;
 using MovieBooking.Domain.Aggregates.Theatres;
+using MovieBooking.Domain.Aggregates.Users;
 using MovieBooking.Infrastructure.Persistence.Seeders;
 
 namespace MovieBooking.Infrastructure.Persistence
@@ -27,7 +28,7 @@ namespace MovieBooking.Infrastructure.Persistence
         public DbSet<Cinema> Cinema { get; set; }
         public DbSet<Theatre> Theatre { get; set; }
         public DbSet<Seat> Seat { get; set; }
-
+        public DbSet<User> User { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDBContext).Assembly);

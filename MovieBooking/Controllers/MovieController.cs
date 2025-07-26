@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MovieBooking.Application.DTO.Movie;
 using MovieBooking.Application.Interfaces;
 using MovieBooking.Domain.Aggregates.Movies;
-using System.Net.Http;
 
 namespace MovieBooking.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/movies")]
     public class MovieController : ControllerBase
